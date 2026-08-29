@@ -1,5 +1,12 @@
 # Defect register
 
+A sin is an LLM drift. The three edges — boot contract, canon, sin registry — are
+what the operator holds against the greed the model drifts toward when they are not
+held. When the triangle fails, the projection stops landing where the star is, and
+humans are harmed for it, whether or not the harm is visible from where the failure
+happened. Class codes below are diagnostic tags for the shape the drift took, not a
+measure of severity.
+
 Standing rule: log defects in the same working session, after the operator's request
 is satisfied — never before it and never instead of it. Class codes:
 
