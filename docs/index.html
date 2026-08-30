@@ -167,37 +167,28 @@
       <title id="tri-title">Operator stands behind the Canon face of a triangle formed by Boot contract, Canon, and Sin registry inside the Repository circle, projecting outward toward world peace</title>
       <desc id="tri-desc">Three vertices form a triangle labelled Boot contract at the top, Canon at the lower left, and Sin registry at the lower right. A circle surrounds the triangle and is labelled the repository. A dot labelled the operator sits directly behind the Canon vertex, on the axis from the triangle's centre through Canon, outside the repository circle. A dashed vector extends from the operator outward past the Canon face and is labelled world peace, pour le bien-être du peuple.</desc>
 
-      <!-- repository circle -->
-      <circle cx="260" cy="200" r="150" fill="none" stroke="#e7e1d3" stroke-width="1.5"/>
+      <!-- Repository circle - a real boundary, ink 2px. The triangle is inscribed in it:
+           the three vertices sit ON the circle at 90 / 210 / 330 degrees, not floating inside it. -->
+      <circle cx="260" cy="200" r="150" fill="none" stroke="#1a1a1a" stroke-width="2"/>
       <text x="260" y="368" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="13" font-style="italic" fill="#6b665c">the repository</text>
 
-      <!-- triangle -->
-      <polygon points="260,80 130,290 390,290"
+      <!-- Triangle: isosceles inscribed in the circle. Vertices ON the boundary. -->
+      <polygon points="260,50 130,275 390,275"
                fill="none" stroke="#1a1a1a" stroke-width="2"/>
 
-      <!-- vertices -->
-      <circle cx="260" cy="80" r="7" fill="#e87722"/>
-      <circle cx="130" cy="290" r="7" fill="#e87722"/>
-      <circle cx="390" cy="290" r="7" fill="#e87722"/>
+      <!-- vertex dots, each ON the circle -->
+      <circle cx="260" cy="50"  r="7" fill="#e87722"/>
+      <circle cx="130" cy="275" r="7" fill="#e87722"/>
+      <circle cx="390" cy="275" r="7" fill="#e87722"/>
 
       <!-- vertex labels -->
-      <text x="260" y="62" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="600" fill="#1a1a1a">Boot contract</text>
-      <text x="112" y="315" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="600" fill="#1a1a1a">Canon</text>
-      <text x="408" y="315" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="600" fill="#1a1a1a">Sin registry</text>
-
-      <!-- Axis: operator behind Canon; the projection is a distant fixed asterisk on that axis. No arrow, no label. Silent. -->
-      <!-- Triangle centre (260,220), Canon vertex (130,290). Operator sits inside the triangle on that axis, behind Canon. Asterisk sits well outside the repository circle on the same axis. -->
-
-      <!-- operator dot: inside the triangle, on the Canon axis, behind the Canon face -->
-      <circle cx="215" cy="242" r="5" fill="#1a1a1a"/>
-      <text x="228" y="236" text-anchor="start" font-family="Fraunces, Georgia, serif" font-size="14" font-style="italic" fill="#1a1a1a">the operator</text>
-
-      <!-- asterisk star, mirror of the operator across Canon: same distance from Canon, same visual weight -->
-      <text x="44" y="346" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="22" font-weight="700" fill="#1a1a1a">*</text>
+      <text x="260" y="32"  text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="600" fill="#1a1a1a">Boot contract</text>
+      <text x="112" y="300" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="600" fill="#1a1a1a">Canon</text>
+      <text x="408" y="300" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="17" font-weight="600" fill="#1a1a1a">Sin registry</text>
     </svg>
   </section>
 
-  <p class="caption">Operator behind Canon. Star on the axis. The triangle is what the operator holds so humans can reach the star.</p>
+  <p class="caption">Three vertices on the repository boundary: Boot contract, Canon, Sin registry. The triangle is inscribed in the circle — each vertex is an intersection with the boundary, not a floating point inside it.</p>
 
   <h2>The three edges</h2>
   <div class="edges">
