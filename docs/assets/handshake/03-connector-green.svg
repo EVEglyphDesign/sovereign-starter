@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="s3-title s3-desc">
+  <title id="s3-title">AI surface with GitHub connector shown as connected</title>
+  <desc id="s3-desc">Reconstruction of a generic AI surface connector panel. The GitHub row shows a green Connected indicator. A pirate-red X marks the Ask the surface prompt box.</desc>
+
+  <rect width="720" height="520" fill="#fdfaf4"/>
+
+  <!-- surface chrome -->
+  <rect x="24" y="24" width="672" height="472" fill="#ffffff" stroke="#e7e1d3" stroke-width="1" rx="10"/>
+
+  <text x="48" y="60" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="600" fill="#1a1a1a">Your AI surface &middot; connectors</text>
+
+  <!-- GitHub row -->
+  <rect x="48" y="84" width="624" height="60" fill="#f7f2e7" stroke="#e7e1d3" stroke-width="1" rx="6"/>
+  <g transform="translate(68,102)">
+    <circle cx="12" cy="12" r="12" fill="#1a1a1a"/>
+    <path fill="#ffffff" transform="translate(2,2) scale(0.83)" d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17 4.4 18 4.7 18 4.7c.6 1.7.2 2.9.1 3.2.7.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.6-5.5 5.9.5.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6A11.9 11.9 0 0 0 24 12c0-6.6-5.4-12-12-12z"/>
+  </g>
+  <text x="108" y="118" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#1a1a1a">GitHub</text>
+  <text x="108" y="134" font-family="Inter, sans-serif" font-size="12" fill="#6b665c">create repos, read and write files</text>
+
+  <!-- Connected pill -->
+  <g transform="translate(560,102)">
+    <rect x="0" y="0" width="92" height="26" fill="#dcf5e2" stroke="#1f883d" stroke-width="1" rx="13"/>
+    <circle cx="14" cy="13" r="4" fill="#1f883d"/>
+    <text x="26" y="17" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1f883d">Connected</text>
+  </g>
+
+  <!-- Other rows, muted, to make the green row stand out -->
+  <rect x="48" y="156" width="624" height="44" fill="#ffffff" stroke="#e7e1d3" stroke-width="1" rx="6"/>
+  <text x="68" y="184" font-family="Inter, sans-serif" font-size="13" fill="#6b665c">Google Drive &middot; not connected</text>
+
+  <rect x="48" y="208" width="624" height="44" fill="#ffffff" stroke="#e7e1d3" stroke-width="1" rx="6"/>
+  <text x="68" y="236" font-family="Inter, sans-serif" font-size="13" fill="#6b665c">Dropbox &middot; not connected</text>
+
+  <!-- prompt box -->
+  <text x="48" y="300" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="600" fill="#1a1a1a">Now ask the surface</text>
+
+  <rect x="48" y="316" width="624" height="112" fill="#ffffff" stroke="#e7e1d3" stroke-width="1" rx="8"/>
+  <text x="68" y="344" font-family="Inter, sans-serif" font-size="13" fill="#1a1a1a">Create a new public GitHub repo named <tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#e87722">sovereign-starter</tspan>.</text>
+  <text x="68" y="366" font-family="Inter, sans-serif" font-size="13" fill="#1a1a1a">Fetch SOVEREIGN-STARTER.md from EVEglyphDesign/sovereign-starter and</text>
+  <text x="68" y="386" font-family="Inter, sans-serif" font-size="13" fill="#1a1a1a">commit it to the new repo as README.md. Then read it and follow §0.</text>
+
+  <!-- pirate red X over the prompt -->
+  <g transform="translate(640,372)">
+    <line x1="-20" y1="-16" x2="20" y2="16" stroke="#c8102e" stroke-width="6" stroke-linecap="round"/>
+    <line x1="20" y1="-16" x2="-20" y2="16" stroke="#c8102e" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <text x="360" y="464" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="14" font-style="italic" fill="#6b665c">Step 3 &middot; drop the file &middot; X marks the prompt you paste</text>
+  <text x="360" y="484" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b665c">reconstruction of a generic AI-surface connector panel &middot; not a live capture</text>
+</svg>

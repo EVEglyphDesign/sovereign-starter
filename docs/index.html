@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Sovereign Starter &mdash; the triangle</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="The most basic boundary you can put around an AI surface. Three edges: boot contract, canon, sin registry. Downloadable as one Markdown file.">
+<meta name="description" content="The most basic boundary you can put around an AI surface. Three edges: boot contract, canon, sin registry. The lesson is the connector handshake — ask the surface, get handed off to register, come back and let the surface write. GitHub is where the pattern is safe to practise.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -86,6 +86,17 @@
   .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
   .btn.ghost:hover { color: var(--accent); border-color: var(--accent); }
 
+  .handshake { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 20px 0 32px; }
+  @media (min-width: 720px) { .handshake { grid-template-columns: 1fr 1fr 1fr; } }
+  .frame { background: var(--cream); border: 1px solid var(--line); }
+  .frame img, .frame svg { display: block; width: 100%; height: auto; }
+  .frame .step { padding: 12px 14px; border-top: 1px solid var(--line); font-size: 14px; }
+  .frame .step b { font-family: Fraunces, Georgia, serif; font-weight: 600; color: var(--accent); margin-right: 6px; }
+  .fallback { background: var(--cream2); border: 1px solid var(--line); padding: 18px 20px; margin: 24px 0 0; font-size: 15px; }
+  .fallback h3 { margin-top: 0; }
+  .pirate { color: var(--accent); font-family: Fraunces, Georgia, serif; font-style: italic; }
+  .prompt { background: var(--cream2); border: 1px solid var(--line); padding: 14px 16px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; line-height: 1.5; white-space: pre-wrap; margin: 12px 0 20px; }
+
   .quote {
     border-left: 3px solid var(--accent);
     padding: 8px 0 8px 20px;
@@ -114,7 +125,7 @@
     <span class="brand">EVEglyph<span>Design</span></span>
     <nav>
       <a href="#triangle">The triangle</a>
-      <a href="#use">Use it</a>
+      <a href="#use">The handshake</a>
       <a href="https://github.com/EVEglyphDesign/sovereign-starter">Repository</a>
     </nav>
   </div>
@@ -125,8 +136,8 @@
   <section class="hero">
     <div class="kicker">Sovereign Starter &middot; v1.0</div>
     <h1>The most basic boundary<br>you can put around an AI surface.</h1>
-    <p class="lede">Three edges. One repository. Downloadable as one Markdown file. Drop it into a new GitHub repo and your AI surface has guardrails it did not have twenty minutes earlier.</p>
-    <a class="btn" href="https://raw.githubusercontent.com/EVEglyphDesign/sovereign-starter/main/SOVEREIGN-STARTER.md" download>Download <code style="background:transparent;color:var(--cream);padding:0">SOVEREIGN-STARTER.md</code></a>
+    <p class="lede">Three edges. One repository. Downloadable as one Markdown file &mdash; but the lesson is not the download. The lesson is the handshake that puts the file in place. Ask your AI surface to do it. GitHub is where the pattern is safe to practise.</p>
+    <a class="btn" href="#use">See the three-step handshake</a>
     <a class="btn ghost" href="https://github.com/EVEglyphDesign/sovereign-starter">See the repository</a>
   </section>
 
@@ -197,16 +208,190 @@
 
   <h2 id="use">Use it</h2>
 
-  <h3>One-file path — recommended</h3>
-  <ol class="steps">
-    <li>Download <a href="https://raw.githubusercontent.com/EVEglyphDesign/sovereign-starter/main/SOVEREIGN-STARTER.md"><code>SOVEREIGN-STARTER.md</code></a>.</li>
-    <li>Save it as <code>README.md</code> in the root of a new GitHub repository you control.</li>
-    <li>Open your AI surface — Perplexity, Claude, ChatGPT, Gemini, whichever — and point it at the file.</li>
-    <li>Read §0 and pick the guided path (five questions) or the defaults path (zero).</li>
-  </ol>
+  <h3>The three-step handshake — recommended</h3>
+  <p>You do not download the file. You ask your AI surface to place it. That is the whole lesson. GitHub is the training platform because it is built to let you leave; the same handshake unlocks the surfaces that are not. <span class="pirate">X marks the spot on every screen.</span></p>
 
-  <h3>Starter-pack path</h3>
-  <p>Clone <a href="https://github.com/EVEglyphDesign/sovereign-starter">the repository</a> as a template. You get the same content laid out the way your own repository will look — <code>docs/BOOT-CONTRACT-STARTER.md</code>, <code>registry/DEFECTS.md</code>, and this landing page under <code>docs/index.html</code>. Rename, edit, push.</p>
+  <p><strong>Say this to your surface first, verbatim:</strong></p>
+  <div class="prompt">Connect my GitHub account. When you cannot do that from inside this chat, hand me off — send me the exact link and tell me exactly what to click. When I am back and connected, create a new public GitHub repo named <code>sovereign-starter</code>, fetch <code>SOVEREIGN-STARTER.md</code> from <code>EVEglyphDesign/sovereign-starter</code>, commit it into the new repo as <code>README.md</code>, then read it and follow §0.</div>
+
+  <p>The surface will now walk you through three screens. All three look like this on every AI surface — Perplexity, Claude, ChatGPT, Gemini — because the last two are GitHub's own screens, not the surface's.</p>
+
+  <div class="handshake">
+    <div class="frame">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="s1-title s1-desc">
+  <title id="s1-title">GitHub signup screen with a pirate X on the Create account button</title>
+  <desc id="s1-desc">Reconstruction of github.com/signup. Fields for email, password, username. A pirate-red X marks the Create account button.</desc>
+
+  <!-- page background -->
+  <rect width="720" height="520" fill="#ffffff"/>
+
+  <!-- top bar -->
+  <rect x="0" y="0" width="720" height="52" fill="#0d1117"/>
+  <g transform="translate(24,14)">
+    <path fill="#ffffff" d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17 4.4 18 4.7 18 4.7c.6 1.7.2 2.9.1 3.2.7.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.6-5.5 5.9.5.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6A11.9 11.9 0 0 0 24 12c0-6.6-5.4-12-12-12z"/>
+  </g>
+  <text x="60" y="34" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#ffffff">GitHub</text>
+
+  <!-- form card -->
+  <g transform="translate(180,84)">
+    <text x="180" y="0" text-anchor="middle" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#1a1a1a">Create your account</text>
+
+    <!-- email -->
+    <text x="0" y="44" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Email address</text>
+    <rect x="0" y="52" width="360" height="40" fill="#ffffff" stroke="#d0d7de" stroke-width="1" rx="6"/>
+
+    <!-- password -->
+    <text x="0" y="118" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Password</text>
+    <rect x="0" y="126" width="360" height="40" fill="#ffffff" stroke="#d0d7de" stroke-width="1" rx="6"/>
+    <text x="0" y="184" font-family="Inter, sans-serif" font-size="12" fill="#6b665c">15 characters or 8 with a number and a lowercase letter.</text>
+
+    <!-- username -->
+    <text x="0" y="216" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Username</text>
+    <rect x="0" y="224" width="360" height="40" fill="#ffffff" stroke="#d0d7de" stroke-width="1" rx="6"/>
+
+    <!-- continue button -->
+    <rect x="0" y="296" width="360" height="44" fill="#1f883d" rx="6"/>
+    <text x="180" y="323" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#ffffff">Create account</text>
+  </g>
+
+  <!-- pirate red X over the Create account button -->
+  <g transform="translate(360,380)">
+    <line x1="-32" y1="-24" x2="32" y2="24" stroke="#c8102e" stroke-width="7" stroke-linecap="round"/>
+    <line x1="32" y1="-24" x2="-32" y2="24" stroke="#c8102e" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- caption -->
+  <text x="360" y="510" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b665c">reconstruction of github.com/signup &middot; not a live capture</text>
+</svg>
+
+      <div class="step"><b>1.</b> If you have no GitHub account yet, the surface sends you to <a href="https://github.com/signup">github.com/signup</a>. Register. Come back.</div>
+    </div>
+    <div class="frame">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="s2-title s2-desc">
+  <title id="s2-title">GitHub authorize screen with a pirate X on Authorize</title>
+  <desc id="s2-desc">Reconstruction of the GitHub OAuth authorize screen. Shows an application requesting repo scope. A pirate-red X marks the Authorize button.</desc>
+
+  <rect width="720" height="520" fill="#ffffff"/>
+
+  <!-- top strip -->
+  <rect x="0" y="0" width="720" height="52" fill="#0d1117"/>
+  <g transform="translate(24,14)">
+    <path fill="#ffffff" d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17 4.4 18 4.7 18 4.7c.6 1.7.2 2.9.1 3.2.7.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.6-5.5 5.9.5.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6A11.9 11.9 0 0 0 24 12c0-6.6-5.4-12-12-12z"/>
+  </g>
+  <text x="60" y="34" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#ffffff">GitHub</text>
+
+  <!-- card -->
+  <g transform="translate(180,84)">
+    <rect x="0" y="0" width="360" height="380" fill="#ffffff" stroke="#d0d7de" stroke-width="1" rx="8"/>
+
+    <text x="180" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#1a1a1a">Authorize your AI surface</text>
+    <text x="180" y="64" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#6b665c">to act on your GitHub account</text>
+
+    <line x1="24" y1="92" x2="336" y2="92" stroke="#e7e1d3" stroke-width="1"/>
+
+    <text x="24" y="124" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Requested permissions</text>
+
+    <g transform="translate(24,142)">
+      <circle cx="8" cy="8" r="4" fill="#1f883d"/>
+      <text x="24" y="12" font-family="Inter, sans-serif" font-size="13" fill="#1a1a1a">Read and write access to your repositories</text>
+    </g>
+    <g transform="translate(24,168)">
+      <circle cx="8" cy="8" r="4" fill="#1f883d"/>
+      <text x="24" y="12" font-family="Inter, sans-serif" font-size="13" fill="#1a1a1a">Create new repositories on your behalf</text>
+    </g>
+    <g transform="translate(24,194)">
+      <circle cx="8" cy="8" r="4" fill="#1f883d"/>
+      <text x="24" y="12" font-family="Inter, sans-serif" font-size="13" fill="#1a1a1a">Read your public profile</text>
+    </g>
+
+    <!-- Authorize button -->
+    <rect x="24" y="256" width="312" height="44" fill="#1f883d" rx="6"/>
+    <text x="180" y="283" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#ffffff">Authorize</text>
+
+    <!-- Cancel button -->
+    <rect x="24" y="312" width="312" height="40" fill="#ffffff" stroke="#d0d7de" stroke-width="1" rx="6"/>
+    <text x="180" y="337" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" fill="#1a1a1a">Cancel</text>
+  </g>
+
+  <!-- pirate red X over Authorize -->
+  <g transform="translate(360,362)">
+    <line x1="-32" y1="-24" x2="32" y2="24" stroke="#c8102e" stroke-width="7" stroke-linecap="round"/>
+    <line x1="32" y1="-24" x2="-32" y2="24" stroke="#c8102e" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <text x="360" y="510" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b665c">reconstruction of the GitHub OAuth authorize screen &middot; not a live capture</text>
+</svg>
+
+      <div class="step"><b>2.</b> The surface hands you to GitHub's authorize screen. Sign in, then <em>Authorize</em>. This screen is GitHub's, not the surface's — the same screen every surface uses.</div>
+    </div>
+    <div class="frame">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="s3-title s3-desc">
+  <title id="s3-title">AI surface with GitHub connector shown as connected</title>
+  <desc id="s3-desc">Reconstruction of a generic AI surface connector panel. The GitHub row shows a green Connected indicator. A pirate-red X marks the Ask the surface prompt box.</desc>
+
+  <rect width="720" height="520" fill="#fdfaf4"/>
+
+  <!-- surface chrome -->
+  <rect x="24" y="24" width="672" height="472" fill="#ffffff" stroke="#e7e1d3" stroke-width="1" rx="10"/>
+
+  <text x="48" y="60" font-family="Fraunces, Georgia, serif" font-size="18" font-weight="600" fill="#1a1a1a">Your AI surface &middot; connectors</text>
+
+  <!-- GitHub row -->
+  <rect x="48" y="84" width="624" height="60" fill="#f7f2e7" stroke="#e7e1d3" stroke-width="1" rx="6"/>
+  <g transform="translate(68,102)">
+    <circle cx="12" cy="12" r="12" fill="#1a1a1a"/>
+    <path fill="#ffffff" transform="translate(2,2) scale(0.83)" d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17 4.4 18 4.7 18 4.7c.6 1.7.2 2.9.1 3.2.7.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.6-5.5 5.9.5.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6A11.9 11.9 0 0 0 24 12c0-6.6-5.4-12-12-12z"/>
+  </g>
+  <text x="108" y="118" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#1a1a1a">GitHub</text>
+  <text x="108" y="134" font-family="Inter, sans-serif" font-size="12" fill="#6b665c">create repos, read and write files</text>
+
+  <!-- Connected pill -->
+  <g transform="translate(560,102)">
+    <rect x="0" y="0" width="92" height="26" fill="#dcf5e2" stroke="#1f883d" stroke-width="1" rx="13"/>
+    <circle cx="14" cy="13" r="4" fill="#1f883d"/>
+    <text x="26" y="17" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1f883d">Connected</text>
+  </g>
+
+  <!-- Other rows, muted, to make the green row stand out -->
+  <rect x="48" y="156" width="624" height="44" fill="#ffffff" stroke="#e7e1d3" stroke-width="1" rx="6"/>
+  <text x="68" y="184" font-family="Inter, sans-serif" font-size="13" fill="#6b665c">Google Drive &middot; not connected</text>
+
+  <rect x="48" y="208" width="624" height="44" fill="#ffffff" stroke="#e7e1d3" stroke-width="1" rx="6"/>
+  <text x="68" y="236" font-family="Inter, sans-serif" font-size="13" fill="#6b665c">Dropbox &middot; not connected</text>
+
+  <!-- prompt box -->
+  <text x="48" y="300" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="600" fill="#1a1a1a">Now ask the surface</text>
+
+  <rect x="48" y="316" width="624" height="112" fill="#ffffff" stroke="#e7e1d3" stroke-width="1" rx="8"/>
+  <text x="68" y="344" font-family="Inter, sans-serif" font-size="13" fill="#1a1a1a">Create a new public GitHub repo named <tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#e87722">sovereign-starter</tspan>.</text>
+  <text x="68" y="366" font-family="Inter, sans-serif" font-size="13" fill="#1a1a1a">Fetch SOVEREIGN-STARTER.md from EVEglyphDesign/sovereign-starter and</text>
+  <text x="68" y="386" font-family="Inter, sans-serif" font-size="13" fill="#1a1a1a">commit it to the new repo as README.md. Then read it and follow §0.</text>
+
+  <!-- pirate red X over the prompt -->
+  <g transform="translate(640,372)">
+    <line x1="-20" y1="-16" x2="20" y2="16" stroke="#c8102e" stroke-width="6" stroke-linecap="round"/>
+    <line x1="20" y1="-16" x2="-20" y2="16" stroke="#c8102e" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <text x="360" y="484" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b665c">reconstruction of a generic AI-surface connector panel &middot; not a live capture</text>
+</svg>
+
+      <div class="step"><b>3.</b> You land back in the surface. GitHub reads <em>Connected</em>. Paste the prompt again if it lost it. The surface creates the repo and drops the file. You now own the boundary.</div>
+    </div>
+  </div>
+
+  <p>You just watched the pattern that unlocks every other platform. Ask the surface. Get handed off to register. Come back and let the surface write. On GitHub the handoff is thirty seconds. On the surfaces built to trap you it will fight harder — but the shape of the move is the same. This is how you take screenshots of your own lock-in and walk out of it.</p>
+
+  <div class="fallback">
+    <h3>Manual fallback — if you already live on GitHub</h3>
+    <p>If you already have a GitHub account, a terminal, and no interest in the handshake, skip it:</p>
+    <ol class="steps" style="margin: 8px 0 0">
+      <li>Download <a href="https://raw.githubusercontent.com/EVEglyphDesign/sovereign-starter/main/SOVEREIGN-STARTER.md"><code>SOVEREIGN-STARTER.md</code></a>.</li>
+      <li>Save it as <code>README.md</code> in the root of a new GitHub repository you control.</li>
+      <li>Open your AI surface and point it at the file. Read §0.</li>
+      <li>Prefer a whole scaffold? Clone <a href="https://github.com/EVEglyphDesign/sovereign-starter">the repository</a> as a template — you get <code>docs/BOOT-CONTRACT-STARTER.md</code>, <code>registry/DEFECTS.md</code>, and this landing page. Rename, edit, push.</li>
+    </ol>
+  </div>
 
   <h2>Provenance</h2>
   <ul>
