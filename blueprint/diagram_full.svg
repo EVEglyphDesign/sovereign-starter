@@ -20,10 +20,11 @@
   <text class="ast" x="150" y="290">*</text>
   <text class="ast" x="370" y="290">*</text>
 
-  <!-- Vertex labels -->
-  <text class="lbl" x="260" y="63" text-anchor="middle">boot contract</text>
-  <text class="lbl" x="150" y="310" text-anchor="middle">canon</text>
-  <text class="lbl" x="370" y="310" text-anchor="middle">sin registry</text>
+  <!-- Vertex labels sit OUTSIDE the circle, aligned to their intersection bullet.
+       The bullet seeks the intersection; the text is next to it, never crossing the circle line. -->
+  <text class="lbl" x="260" y="63"  text-anchor="middle">boot contract</text>
+  <text class="lbl" x="140" y="310" text-anchor="end">canon</text>
+  <text class="lbl" x="380" y="310" text-anchor="start">sin registry</text>
 
   <!-- Edge labels: safety / betterment / enforcement -->
   <!-- top-left edge  (boot->canon): safety -->
