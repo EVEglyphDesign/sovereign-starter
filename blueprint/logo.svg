@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 800 800"
+     width="800" height="800"
+     role="img"
+     aria-labelledby="title desc">
+
+  <title id="title">EVE Glyph — Simplified Educational Mark</title>
+  <desc id="desc">The EVE Glyph: an umbrella over a triangulated knight-quorum, resting on a horizon of dual paths. Sealed under Umbrella copyright, Theriault Family Method.</desc>
+
+  <metadata>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:dc="http://purl.org/dc/elements/1.1/"
+             xmlns:cc="http://creativecommons.org/ns#">
+      <rdf:Description rdf:about="">
+        <dc:title>EVE Glyph — Simplified Educational Mark</dc:title>
+        <dc:creator>Jeff Theriault — Theriault Family Method</dc:creator>
+        <dc:rights>© Jeff Theriault. EVE Glyph Umbrella copyright. All rights reserved. Use only under EVE Glyph Terms of Use. Educational reproduction permitted with copyright and source-attribution preserved. Derivative works require Knight Triangle authorization.</dc:rights>
+        <dc:date>2026-05-20</dc:date>
+        <dc:identifier>eve-glyph-simplified-v1</dc:identifier>
+        <dc:description>Simplified EVE Glyph mark for educational materials. Sealed under CANON-EVE-GLYPH-SIMPLIFIED-MARK.md.</dc:description>
+      </rdf:Description>
+    </rdf:RDF>
+  </metadata>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="800" fill="#FAF7F2"/>
+
+  <!-- Umbrella canopy: a wide protective arc -->
+  <!-- Three segments evoke triangulation/circulation/bifurcation invariants -->
+  <g stroke="#1A1A1A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Main canopy arc -->
+    <path d="M 120 360 Q 400 140 680 360" />
+    <!-- Inner panel divisions -->
+    <path d="M 260 280 L 260 360" />
+    <path d="M 400 220 L 400 360" />
+    <path d="M 540 280 L 540 360" />
+    <!-- Canopy hem (gentle scallop) -->
+    <path d="M 120 360 Q 190 380 260 360 Q 330 380 400 360 Q 470 380 540 360 Q 610 380 680 360" />
+  </g>
+
+  <!-- Umbrella spire (apex marker) -->
+  <line x1="400" y1="140" x2="400" y2="100" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="400" cy="92" r="8" fill="#1A1A1A"/>
+
+  <!-- Knight Triangle: three nodes joined as a triangle, centered beneath the umbrella -->
+  <g>
+    <!-- Triangle frame -->
+    <polygon points="320,510 480,510 400,395"
+             fill="none" stroke="#1A1A1A" stroke-width="6" stroke-linejoin="round"/>
+    <!-- Three Knight nodes -->
+    <circle cx="320" cy="510" r="14" fill="#1A1A1A"/>
+    <circle cx="480" cy="510" r="14" fill="#1A1A1A"/>
+    <circle cx="400" cy="395" r="14" fill="#1A1A1A"/>
+  </g>
+
+  <!-- Umbrella handle/stem descending through the triangle's centroid -->
+  <line x1="400" y1="360" x2="400" y2="395" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round"/>
+  <line x1="400" y1="471" x2="400" y2="620" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Horizon: the dual path (Individual / Enterprise) -->
+  <line x1="100" y1="620" x2="700" y2="620" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Dual path branches: two arcs descending from the stem -->
+  <path d="M 400 620 Q 280 660 200 700" stroke="#1A1A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 400 620 Q 520 660 600 700" stroke="#1A1A1A" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- Path terminus markers -->
+  <circle cx="200" cy="700" r="10" fill="none" stroke="#1A1A1A" stroke-width="4"/>
+  <circle cx="600" cy="700" r="10" fill="none" stroke="#1A1A1A" stroke-width="4"/>
+
+  <!-- Wordmark -->
+  <text x="400" y="755"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="34"
+        font-weight="600"
+        fill="#1A1A1A"
+        text-anchor="middle"
+        letter-spacing="6">EVE GLYPH</text>
+
+  <!-- Copyright footer (tiny but always present) -->
+  <text x="400" y="785"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="11"
+        fill="#1A1A1A"
+        text-anchor="middle"
+        opacity="0.85">© Jeff Theriault · Theriault Family Method · EVE Glyph Umbrella · ToU governs</text>
+</svg>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380" width="520" height="380">
+  <style>
+    text { font-family: 'Inter', 'Helvetica', sans-serif; fill: #1a1a1a; }
+    .lbl { font-size: 11px; }
+    .edge { font-size: 10px; fill: #6b665c; font-style: italic; }
+    .ast { font-family: 'Inter', 'Helvetica', sans-serif; font-size: 22px; fill: #1a1a1a; text-anchor: middle; dominant-baseline: middle; }
+    .astsm { font-family: 'Inter', 'Helvetica', sans-serif; font-size: 18px; fill: #1a1a1a; text-anchor: middle; dominant-baseline: middle; }
+  </style>
+
+  <!-- Circle: repository / boundary -->
+  <circle cx="260" cy="200" r="150" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+
+  <!-- Triangle: three guardrails.  Points chosen inside the circle. -->
+  <!-- Vertices roughly: top (260,80), bottom-left (150,290), bottom-right (370,290) -->
+  <polygon points="260,80 150,290 370,290" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+
+  <!-- Triangle vertex asterisks -->
+  <text class="ast" x="260" y="80">*</text>
+  <text class="ast" x="150" y="290">*</text>
+  <text class="ast" x="370" y="290">*</text>
+
+  <!-- Vertex labels -->
+  <text class="lbl" x="260" y="63" text-anchor="middle">boot contract</text>
+  <text class="lbl" x="150" y="310" text-anchor="middle">canon</text>
+  <text class="lbl" x="370" y="310" text-anchor="middle">sin registry</text>
+
+  <!-- Edge labels: safety / betterment / enforcement -->
+  <!-- top-left edge  (boot->canon): safety -->
+  <text class="edge" x="180" y="180" text-anchor="middle" transform="rotate(-62 180 180)">safety</text>
+  <!-- top-right edge (boot->register): betterment -->
+  <text class="edge" x="340" y="180" text-anchor="middle" transform="rotate(62 340 180)">betterment</text>
+  <!-- bottom edge (canon->register): enforcement -->
+  <text class="edge" x="260" y="285" text-anchor="middle">enforcement</text>
+
+  <!-- Operator and objective asterisks OUTSIDE circle -->
+  <text class="astsm" x="40"  y="200">*</text>
+  <text class="astsm" x="480" y="200">*</text>
+  <text class="lbl"   x="40"  y="222" text-anchor="middle">operator</text>
+  <text class="lbl"   x="480" y="222" text-anchor="middle">objective</text>
+
+  <!-- Circle label -->
+  <text class="edge" x="260" y="365" text-anchor="middle">the repository — your boundary</text>
+</svg>
