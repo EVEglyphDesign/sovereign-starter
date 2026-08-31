@@ -12,6 +12,14 @@ from pathlib import Path
 
 from reportlab.lib.pagesizes import LETTER
 from reportlab.lib.units import inch
+
+# --- phone-first page size ---
+# PDF is fixed-layout: it cannot reflow per device. To render legibly on a phone
+# screen at fit-to-width AND read cleanly on desktop, we ship a single small-page
+# geometry (5.5" x 8.25", roughly A6-tall / pocket-book proportions). On a phone
+# the page fills the reader edge-to-edge without pinch-zoom; on a laptop it opens
+# as a smaller-than-A4 document that still reads perfectly.
+PHONE_PAGE = (5.5 * inch, 8.25 * inch)
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
@@ -41,17 +49,17 @@ pdfmetrics.registerFont(TTFont("Fraunces-Bold", str(FONTS_DIR / "Fraunces-Bold.t
 pdfmetrics.registerFont(TTFont("Inter", str(FONTS_DIR / "Inter-Regular.ttf")))
 pdfmetrics.registerFont(TTFont("Inter-Bold", str(FONTS_DIR / "Inter-Bold.ttf")))
 
-# --- page geometry ---
-PAGE_W, PAGE_H = LETTER
-MARGIN_L = 0.9 * inch
-MARGIN_R = 0.9 * inch
-MARGIN_T = 0.9 * inch
-MARGIN_B = 0.9 * inch
+# --- page geometry (phone-first) ---
+PAGE_W, PAGE_H = PHONE_PAGE
+MARGIN_L = 0.4 * inch
+MARGIN_R = 0.4 * inch
+MARGIN_T = 0.5 * inch
+MARGIN_B = 0.5 * inch
 CONTENT_W = PAGE_W - MARGIN_L - MARGIN_R
-BODY_SIZE = 10.5
-BODY_LEAD = 15
-H1_SIZE = 22
-H2_SIZE = 14
+BODY_SIZE = 11.5
+BODY_LEAD = 16
+H1_SIZE = 24
+H2_SIZE = 15
 
 # --- parse markdown into structured sections ---
 def parse_markdown(md: str):
@@ -265,36 +273,38 @@ def draw_cover(c, sha_placeholder="—", ts="—"):
     c.rect(0, 0, PAGE_W, PAGE_H, stroke=0, fill=1)
 
     # logo top-right on cover
-    draw_logo(c, PAGE_W - MARGIN_R - 0.9 * inch, PAGE_H - MARGIN_T - 0.9 * inch, 0.9 * inch)
+    logo_sz = 0.65 * inch
+    draw_logo(c, PAGE_W - MARGIN_R - logo_sz, PAGE_H - MARGIN_T - logo_sz, logo_sz)
 
     # title block
     c.setFillColorRGB(*INK)
-    c.setFont("Fraunces-Bold", 34)
-    c.drawString(MARGIN_L, PAGE_H - MARGIN_T - 2.2 * inch, "Executive Blueprint")
+    c.setFont("Fraunces-Bold", H1_SIZE)
+    c.drawString(MARGIN_L, PAGE_H - MARGIN_T - 1.4 * inch, "Executive")
+    c.drawString(MARGIN_L, PAGE_H - MARGIN_T - 1.4 * inch - (H1_SIZE + 4), "Blueprint")
 
-    c.setFont("Fraunces", 18)
+    c.setFont("Fraunces", 12)
     c.setFillColorRGB(*MUTE)
-    c.drawString(MARGIN_L, PAGE_H - MARGIN_T - 2.8 * inch, "Sovereign Starter — one file, on a phone,")
-    c.drawString(MARGIN_L, PAGE_H - MARGIN_T - 3.15 * inch, "in one session.")
+    c.drawString(MARGIN_L, PAGE_H - MARGIN_T - 2.35 * inch, "Sovereign Starter — one file, on a")
+    c.drawString(MARGIN_L, PAGE_H - MARGIN_T - 2.55 * inch, "phone, in one session.")
 
     # accent bar
     c.setFillColorRGB(*ORANGE)
-    c.rect(MARGIN_L, PAGE_H - MARGIN_T - 3.55 * inch, 1.2 * inch, 0.03 * inch, stroke=0, fill=1)
+    c.rect(MARGIN_L, PAGE_H - MARGIN_T - 2.85 * inch, 0.9 * inch, 0.025 * inch, stroke=0, fill=1)
 
-    # cover diagram
-    dw = 4.6 * inch
-    dh = 3.4 * inch
+    # cover diagram — sized to the phone content width
+    dw = CONTENT_W
+    dh = dw * (380 / 520)  # preserve svg aspect
     dx = (PAGE_W - dw) / 2
-    dy = MARGIN_B + 1.6 * inch
+    dy = MARGIN_B + 1.1 * inch
     draw_svg(c, DIAGRAM_FULL, dx, dy, dw, dh)
 
     # cover foot
     c.setFillColorRGB(*MUTE)
-    c.setFont("Inter", 9)
-    c.drawString(MARGIN_L, MARGIN_B + 0.6 * inch, "EVEglyphDesign · v4.2 · 2026-08-31")
-    c.drawString(MARGIN_L, MARGIN_B + 0.4 * inch, f"UTC {ts}")
-    c.drawRightString(PAGE_W - MARGIN_R, MARGIN_B + 0.6 * inch, "© 2026 EVEglyphDesign")
-    c.drawRightString(PAGE_W - MARGIN_R, MARGIN_B + 0.4 * inch, f"SHA-256: {sha_placeholder}")
+    c.setFont("Inter", 7)
+    c.drawString(MARGIN_L, MARGIN_B + 0.5 * inch, "EVEglyphDesign · v4.2 · 2026-08-31")
+    c.drawString(MARGIN_L, MARGIN_B + 0.35 * inch, f"UTC {ts}")
+    c.drawRightString(PAGE_W - MARGIN_R, MARGIN_B + 0.5 * inch, "© 2026 EVEglyphDesign")
+    c.drawRightString(PAGE_W - MARGIN_R, MARGIN_B + 0.35 * inch, f"SHA-256: {sha_placeholder}")
 
 
 def render_blocks(c, blocks, state: PageState):
@@ -362,46 +372,45 @@ def render_blocks(c, blocks, state: PageState):
         if kind == "diagram":
             dtype, caption = content
             if dtype == "full":
-                # dedicated space for full diagram in the flow
-                needed = 3.4 * inch
+                # full diagram: scale to phone content width, preserve aspect
+                dw = CONTENT_W
+                dh = dw * (380 / 520)
+                needed = dh + 0.5 * inch
                 state.ensure(needed)
-                state.y -= 0.1 * inch
-                dw = 4.6 * inch
-                dh = 3.0 * inch
+                state.y -= 0.05 * inch
                 dx = (PAGE_W - dw) / 2
                 dy = state.y - dh
                 draw_svg(c, DIAGRAM_FULL, dx, dy, dw, dh)
-                # logo top-right of diagram
-                draw_logo(c, dx + dw - 0.6 * inch, dy + dh - 0.5 * inch, 0.5 * inch)
+                # logo top-right of diagram (smaller on phone page)
+                lsz = 0.4 * inch
+                draw_logo(c, dx + dw - lsz - 0.1 * inch, dy + dh - lsz - 0.05 * inch, lsz)
                 # caption
                 c.setFillColorRGB(*MUTE)
-                c.setFont("Inter", 8)
+                c.setFont("Inter", 7.5)
                 cap = "Circle — the repository, your boundary.  Triangle — boot contract (safety), canon (betterment), sin registry (enforcement).  Operator and objective outside the circle."
-                # wrap caption
                 cap_lines = []
                 words = cap.split()
                 l = ""
                 for w in words:
                     cand = (l + " " + w).strip()
-                    if pdfmetrics.stringWidth(cand, "Inter", 8) > CONTENT_W - 0.6 * inch:
+                    if pdfmetrics.stringWidth(cand, "Inter", 7.5) > CONTENT_W - 0.2 * inch:
                         cap_lines.append(l)
                         l = w
                     else:
                         l = cand
                 if l:
                     cap_lines.append(l)
-                cap_y = dy - 12
+                cap_y = dy - 10
                 for cl in cap_lines:
-                    c.drawString(MARGIN_L + 0.3 * inch, cap_y, cl)
+                    c.drawString(MARGIN_L + 0.1 * inch, cap_y, cl)
                     cap_y -= 10
-                state.y = dy - (len(cap_lines) + 1) * 10 - 8
+                state.y = dy - (len(cap_lines) + 1) * 10 - 6
                 c.setFillColorRGB(*INK)
             else:
                 # marginal diagram: draw small at right margin at current y
-                sz = 0.6 * inch
+                sz = 0.55 * inch
                 x = PAGE_W - MARGIN_R - sz + 4
                 y = state.y - sz + 0.2 * inch
-                # only if there's room; if y is too low, skip
                 if y > MARGIN_B + 0.6 * inch:
                     draw_svg(c, DIAGRAM_MARG, x, y, sz, sz)
             continue
@@ -421,7 +430,7 @@ def build():
 
     # PASS 1: compute page count by rendering to a throwaway canvas
     tmp = BLUEPRINT_DIR / ".tmp_count.pdf"
-    c = canvas.Canvas(str(tmp), pagesize=LETTER)
+    c = canvas.Canvas(str(tmp), pagesize=PHONE_PAGE)
     draw_cover(c)
     c.showPage()
     state = PageState(c)
@@ -436,7 +445,7 @@ def build():
     tmp.unlink()
 
     # PASS 2: real build with footer showing total pages
-    c = canvas.Canvas(str(OUT), pagesize=LETTER)
+    c = canvas.Canvas(str(OUT), pagesize=PHONE_PAGE)
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     # cover first pass — we compute hash of markdown source as the "content hash"
     sha = hashlib.sha256(md.encode("utf-8")).hexdigest()[:16] + "…"
