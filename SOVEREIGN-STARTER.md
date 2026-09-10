@@ -202,6 +202,7 @@ How the artifact leaves the repository.
 - **Typography:** `{{FONT_DISPLAY}}` display, `{{FONT_BODY}}` body.
 - **Naming:** `{{OPERATOR_NAME}}` spelled the same way every time. No invented variants.
 - **Any Markdown in this repository that describes how you use or structure repositories is written so a reader who copies it can adapt it to their own.** Placeholders where your names, tokens and paths appear. "Your" alongside "my" where the pattern generalises. An explicit copy-and-adapt section naming what to change on first use. No assumption the reader carries your context. This whole starter is the pattern: it is copied to connect a repository to an AI surface, so only material a copier can actually use belongs in it. Guidance that only makes sense inside your own head belongs in your working repository, not here. Breach is a sin — log it and rewrite the passage in copier-usable form.
+- **The one-file `SOVEREIGN-STARTER.md` is a derived, distilled, unbiased projection of three upstream sources, not a hand-maintained cousin of them.** At any point in time it should reflect: (a) your boot contract + skills repository, distilled into the starter's boot-contract section; (b) your canon, distilled into the starter's canon section and framed as *project canon* so the copier reads it as canon for whatever project they are setting up, not as your canon; (c) your sin registry / ROD, distilled into the starter's sin-registry section carrying **two worked examples per defect class — one obvious, one edge case —** so other AI surfaces reading the starter can classify their own defects correctly. Rebuilt by `scripts/bundle.py` so any upstream change can be reprojected with one command. Unbiased means operator-specific names, brands, private project names and operator-only decisions are stripped or replaced with placeholders on the way through; nothing the copier cannot use survives the projection. If the hand-written starter and the projection disagree, the projection wins — the copier is reading a lens on your record, not your record itself.
 
 ### 2.1 The pre-delivery check — binding
 
@@ -340,4 +341,4 @@ example.
 
 ---
 
-_Bundle generated 2026-09-10T22:50:44Z. Source: https://github.com/EVEglyphDesign/sovereign-starter._
+_Bundle generated 2026-09-10T22:55:04Z. Source: https://github.com/EVEglyphDesign/sovereign-starter._
