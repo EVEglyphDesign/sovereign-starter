@@ -174,6 +174,7 @@ How the artifact leaves the repository.
   glassmorphism, no vendor palettes.
 - **Typography:** `{{FONT_DISPLAY}}` display, `{{FONT_BODY}}` body.
 - **Naming:** `{{OPERATOR_NAME}}` spelled the same way every time. No invented variants.
+- **Any Markdown in this repository that describes how you use or structure repositories is written so a reader who copies it can adapt it to their own.** Placeholders where your names, tokens and paths appear. "Your" alongside "my" where the pattern generalises. An explicit copy-and-adapt section naming what to change on first use. No assumption the reader carries your context. This whole starter is the pattern: it is copied to connect a repository to an AI surface, so only material a copier can actually use belongs in it. Guidance that only makes sense inside your own head belongs in your working repository, not here. Breach is a sin — log it and rewrite the passage in copier-usable form.
 
 ### 2.1 The pre-delivery check — binding
 
