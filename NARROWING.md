@@ -148,10 +148,10 @@ Justified by observation class **P** (processing drift).
 ### N-10 · The output rules are a list of facts the return must have quoted, not described
 
 Every rule in this file is a *quoted* verification, not a described
-intention. "The palette is correct" is not a check. "Palette hex
-`#fdfaf4`/`#e87722` verified in the built HTML at line 47" is a check.
-"The link works" is not a check. "The link `https://…` returned HTTP
-200 with the expected content string on line 3" is a check.
+intention. "The palette is correct" is not a check. "Background hex
+`#XXXXXX` verified in the built HTML at line 47" is a check. "The link
+works" is not a check. "`GET https://…` returned HTTP 200 with the
+expected content string on line 3 of the response body" is a check.
 
 Justified by observation class **C** — rules were stated correctly and
 violated in dozens of shapes because the check was described, not run.

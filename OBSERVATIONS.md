@@ -73,9 +73,13 @@ miss; the fault names *who caused* me to bear it.
 
 | Date | ID | Class | Fault | Asked | Done | Cheaper | Waste |
 |---|---|---|---|---|---|---|---|
-| 2026-09-12 | OBS-2026-09-12-01 | C | Agent | *Example row.* Deliver a two-page PDF with the palette I named | Delivered a three-page PDF with a different palette | Read the built PDF back before delivery, quote the palette hex in the return | About twenty minutes of correction cycle; my confidence in the check |
+| 2026-09-12 | OBS-2026-09-12-01 | C | Agent | Extract this starter to a neutral two-file kit that reads cold, without the private branding of the source project | Wrote `NARROWING.md` clean of the source project's name and fonts, then left one hex colour from the source palette inside the N-10 example (`#fdfaf4`/`#e87722`) | Use a neutral placeholder for the example (`#XXXXXX`) so the rule reads as a shape, not as a specific palette. Caught on the read-back at the commit-pinned URL, before this file reached a cold reader | One follow-up commit; the demonstration that the read-back gate works |
 
-Delete the example row when I have logged one of my own.
+This first row is a real one — the read-back on the initial push of
+this starter caught a leak of a palette hex from the source project.
+It is a fitting first entry because it is the rule in `NARROWING.md`
+(N-10, read-back checks) catching a breach of itself. Log your own
+next one on top, and delete this note if you want to.
 
 ## How to log a new observation
 
