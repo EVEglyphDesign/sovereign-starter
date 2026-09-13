@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="s1-title s1-desc">
+  <title id="s1-title">GitHub signup screen with a pirate X on the Create account button</title>
+  <desc id="s1-desc">Reconstruction of github.com/signup. Fields for email, password, username. A pirate-red X marks the Create account button.</desc>
+
+  <!-- page background -->
+  <rect width="720" height="520" fill="#ffffff"/>
+
+  <!-- top bar -->
+  <rect x="0" y="0" width="720" height="52" fill="#0d1117"/>
+  <g transform="translate(24,14)">
+    <path fill="#ffffff" d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17 4.4 18 4.7 18 4.7c.6 1.7.2 2.9.1 3.2.7.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.6-5.5 5.9.5.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6A11.9 11.9 0 0 0 24 12c0-6.6-5.4-12-12-12z"/>
+  </g>
+  <text x="60" y="34" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#ffffff">GitHub</text>
+
+  <!-- form card -->
+  <g transform="translate(180,84)">
+    <text x="180" y="0" text-anchor="middle" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#1a1a1a">Create your account</text>
+
+    <!-- email -->
+    <text x="0" y="44" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Email address</text>
+    <rect x="0" y="52" width="360" height="40" fill="#ffffff" stroke="#d0d7de" stroke-width="1" rx="6"/>
+
+    <!-- password -->
+    <text x="0" y="118" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Password</text>
+    <rect x="0" y="126" width="360" height="40" fill="#ffffff" stroke="#d0d7de" stroke-width="1" rx="6"/>
+    <text x="0" y="184" font-family="Inter, sans-serif" font-size="12" fill="#6b665c">15 characters or 8 with a number and a lowercase letter.</text>
+
+    <!-- username -->
+    <text x="0" y="216" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">Username</text>
+    <rect x="0" y="224" width="360" height="40" fill="#ffffff" stroke="#d0d7de" stroke-width="1" rx="6"/>
+
+    <!-- continue button -->
+    <rect x="0" y="296" width="360" height="44" fill="#1f883d" rx="6"/>
+    <text x="180" y="323" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#ffffff">Create account</text>
+  </g>
+
+  <!-- pirate red X over the Create account button -->
+  <g transform="translate(360,380)">
+    <line x1="-32" y1="-24" x2="32" y2="24" stroke="#c8102e" stroke-width="7" stroke-linecap="round"/>
+    <line x1="32" y1="-24" x2="-32" y2="24" stroke="#c8102e" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- caption -->
+  <text x="360" y="490" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="14" font-style="italic" fill="#6b665c">Step 1 &middot; register the account &middot; X marks the spot</text>
+  <text x="360" y="510" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#6b665c">reconstruction of github.com/signup &middot; not a live capture</text>
+</svg>
