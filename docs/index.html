@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sovereign Starter — the two-file method</title>
+<meta name="description" content="Two files. That is the whole method. NARROWING.md is what you want the AI to do or not do. OBSERVATIONS.md is what actually happened. When the pattern repeats, a rule enters the narrowing. That is the loop.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdfaf4;
+    --cream-2: #f7f2e7;
+    --ink: #1a1a1a;
+    --line: #e7e1d3;
+    --mute: #6b665c;
+    --accent: #e87722;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 64px 28px 96px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 32px; margin-bottom: 40px; }
+  .kicker { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute); margin-bottom: 12px; }
+  h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 52px; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 16px; }
+  .lede { font-family: 'Fraunces', serif; font-size: 22px; line-height: 1.4; font-weight: 400; color: var(--ink); margin: 0 0 12px; max-width: 640px; }
+  h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; margin: 56px 0 20px; }
+  h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 20px; margin: 32px 0 12px; }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  .files { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 24px 0 8px; }
+  .file {
+    padding: 22px 24px;
+    background: var(--cream-2);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    transition: border-color 0.15s;
+  }
+  .file:hover { border-color: var(--accent); }
+  .file-name {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .file-name a { text-decoration: none; }
+  .file-name a:hover { color: var(--accent); }
+  .file-desc { color: var(--mute); font-size: 15px; margin: 0 0 14px; }
+  .file-actions { margin: 12px 0 0; font-size: 14px; }
+  .download-btn { display: inline-block; padding: 8px 16px; background: var(--accent); color: var(--cream); text-decoration: none; border-radius: 3px; font-weight: 500; letter-spacing: 0.01em; }
+  .download-btn:hover { background: var(--ink); color: var(--cream); }
+  .callout {
+    background: var(--cream-2);
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    line-height: 1.5;
+  }
+  .graduate {
+    background: var(--cream-2);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 28px;
+    margin: 32px 0;
+  }
+  .graduate h3 { margin-top: 0; }
+  .graduate p:last-child { margin-bottom: 0; }
+  code, pre { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 14px; }
+  code { background: var(--cream-2); padding: 2px 6px; border-radius: 3px; }
+  pre { background: var(--cream-2); border: 1px solid var(--line); border-radius: 4px; padding: 16px 20px; overflow-x: auto; line-height: 1.5; }
+  pre code { background: none; padding: 0; }
+  footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--mute); font-size: 13px; }
+  footer p { margin: 0 0 6px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 12px; }
+  .meta span { font-family: ui-monospace, monospace; font-size: 12px; }
+  @media (max-width: 560px) {
+    .wrap { padding: 40px 20px 64px; }
+    h1 { font-size: 40px; }
+    .lede { font-size: 19px; }
+    h2 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">EVEglyphDesign · sovereign-starter · v2</div>
+  <h1>Two files. That is the whole method.</h1>
+  <p class="lede">One file for what you want the AI to do or not do. One file for what actually happened. When the pattern repeats, a rule enters the first file.</p>
+  <p class="lede">No framework to adopt. No worldview to buy.</p>
+</header>
+
+<section>
+  <h2>The two files</h2>
+  <div class="files">
+    <div class="file">
+      <div class="file-name"><a href="https://github.com/EVEglyphDesign/sovereign-starter/blob/main/NARROWING.md">NARROWING.md</a></div>
+      <p class="file-desc">What you want the AI to do or not do. In your voice. The AI reads this first, before it acts for you. Ten worked-example rules to copy, edit, or delete.</p>
+      <p class="file-actions"><a href="https://raw.githubusercontent.com/EVEglyphDesign/sovereign-starter/main/NARROWING.md">View raw</a></p>
+    </div>
+    <div class="file">
+      <div class="file-name"><a href="https://github.com/EVEglyphDesign/sovereign-starter/blob/main/OBSERVATIONS.md">OBSERVATIONS.md</a></div>
+      <p class="file-desc">What actually happened. Every time the AI's work put something on your plate that it should not have, you log one row. Individual rows can be sloppy; the aggregate is what matters. The pattern will not lie.</p>
+      <p class="file-actions"><a href="./OBSERVATIONS.md" download="OBSERVATIONS.md" class="download-btn">Download OBSERVATIONS.md</a> &nbsp; <a href="./OBSERVATIONS.md">View raw</a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>The loop</h2>
+  <div class="callout">
+    <code>OBSERVATIONS.md</code> is the evidence. <code>NARROWING.md</code> is the response. When three observations of the same shape stack up, a rule enters <code>NARROWING.md</code>. If the rule closes the shape, it was right. If the shape keeps repeating, the rule was under-specified.
+  </div>
+  <p>That is the whole loop. Two files you write in your own words, and a habit of adding rows to the register when the AI wastes your time.</p>
+</section>
+
+<section>
+  <h2>Five-minute start</h2>
+  <ol>
+    <li>Download or copy both files into whatever surface you already use with your AI.</li>
+    <li>Read <code>NARROWING.md</code>. Delete rules that do not apply to you. Rewrite the ones that do into your own words.</li>
+    <li>Read <code>OBSERVATIONS.md</code>. Delete the example row.</li>
+    <li>Point your AI at the two files: "Read <code>NARROWING.md</code> before you answer, and log any miss to <code>OBSERVATIONS.md</code>" is enough of an instruction.</li>
+    <li>Start using the AI normally. When it wastes your time, add one row. That is the loop.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Where to keep the two files</h2>
+  <p>The files are plain Markdown. They work anywhere you can keep two plain-text documents your AI can read.</p>
+  <ul>
+    <li><strong>ChatGPT project files</strong> — upload both files. First message: "Read <code>NARROWING.md</code> first."</li>
+    <li><strong>Claude project knowledge</strong> — attach both files. Reference <code>NARROWING.md</code> in the system prompt.</li>
+    <li><strong>A Notion page</strong> — one page per file inside a parent page. Copy the parent URL into the AI's context.</li>
+    <li><strong>A Google Doc</strong> — one document per file, in a shared folder. Copy the folder URL into the AI's context.</li>
+    <li><strong>A folder on your computer</strong> — <code>~/ai-notes/NARROWING.md</code> and <code>~/ai-notes/OBSERVATIONS.md</code>.</li>
+    <li><strong>A GitHub repository</strong> — this repository is the reference layout, but you do not need a repository to use the method. A repository is useful when you have graduated past what a scratchpad can hold.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>When two files stop being enough</h2>
+  <div class="graduate">
+    <h3>Graduate to the canon plug-in</h3>
+    <p>When the operating agreement gets wider than a page — you are running a project that needs a bilateral terms section, inherited compliance (finance, information security, GDPR, sovereignty), a reference framework, and project-specific rules — the two-file method still holds, but <code>NARROWING.md</code> outgrows a single scratchpad file.</p>
+    <p>The <a href="https://eveglyphdesign.github.io/canon/"><strong>canon plug-in</strong></a> is that same two-file method at project scale. <code>CANON.md</code> replaces <code>NARROWING.md</code> with a layered structure (Terms + boot contract + inherited compliance + blueprint + framework + project rules); <code>OBSERVATIONS.md</code> stays the same shape and adds a Type-Δ row for every change to the canon so the agreement stays bilateral.</p>
+    <p>Same shape. Same loop. Wider content.</p>
+    <p><a href="https://eveglyphdesign.github.io/canon/">→ eveglyphdesign.github.io/canon</a> &nbsp;·&nbsp; <a href="https://github.com/EVEglyphDesign/canon">repo</a></p>
+  </div>
+</section>
+
+<section>
+  <h2>Why two files instead of one</h2>
+  <p>One file collapses two questions into one: <em>what do I want</em> and <em>why do I want it</em>. That works for a week. It stops working the moment you have more than a page of rules, because the rules and the evidence for the rules cannot both be scannable on the same page.</p>
+  <p>Splitting the two lets <code>NARROWING.md</code> stay short — a first read — while <code>OBSERVATIONS.md</code> grows freely as the evidence accumulates. The AI reads only the short file every session. The long file exists to be read once when a rule feels wrong, or when a new one is added.</p>
+</section>
+
+<section>
+  <h2>Why letters for classes and not names</h2>
+  <p>Letters are cheap to add. A letter never has to be renamed because it was a poor description; a name does. The register in <code>OBSERVATIONS.md</code> starts with ten classes (C, R, D, L, E, S, I, P, T, H) — add your own when a new shape appears. The letters do not have to match anyone else's letters. They only have to be stable for your register.</p>
+</section>
+
+<footer>
+  <p>© 2026 EVEglyphDesign. Content licensed <a href="https://github.com/EVEglyphDesign/sovereign-starter/blob/main/LICENSE-NOTICE.md">MIT</a>.</p>
+  <p><em>Pour le bien-être du peuple.</em></p>
+  <div class="meta">
+    <span>doc: EgD-STARTER-SITE</span>
+    <span>v2.0</span>
+    <span>2026-09-12</span>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
