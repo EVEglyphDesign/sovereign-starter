@@ -22,6 +22,37 @@ the register when the AI wastes your time.
 The three functions are named inline so a team can read Parts I and II
 together and see, on one page, what has been agreed and why.
 
+## If you have to justify this to someone else
+
+The description above is the mechanism. It is not the argument you make
+to a partner, a general counsel or a finance director — they will want
+to know why a text file is worth anyone's time.
+
+**[`THE-CASE.md`](./THE-CASE.md)** is that argument, on three grounds:
+
+- **Governing legislation around usage.** The EU AI Act has been in
+  general application since 2 August 2026, and its AI literacy
+  obligations since February 2025. GDPR Article 5(2) requires
+  controllers to *demonstrate* compliance. The EU Data Act has applied
+  since September 2025. ISO/IEC 42001 certifies an AI management
+  system. Every one of them asks for the same thing: a contemporaneous,
+  attributable record of how the AI was governed and what it actually
+  did. You cannot demonstrate what you did not record.
+- **Economics.** AI bought as seats looks like a fixed cost, so nobody
+  measures the unit cost of AI-assisted work. The register measures
+  rework rather than tokens, and the rule of three is the control that
+  converts that evidence into a reduced unit cost.
+- **Data as a capital asset.** The 2025 System of National Accounts
+  recognises data as a produced asset; IAS 38 still keeps most
+  internally generated intangibles off the balance sheet. The asset is
+  real, growing and invisible. What makes data behave like capital —
+  durable, attributable, controlled, transferable — is exactly what a
+  versioned record with provenance produces, and exactly what a chat
+  history in a vendor's product does not.
+
+Read it before you take the method into a room where someone has to
+approve it.
+
 ## Five-minute start
 
 1. Download or copy the file into whatever surface you already use
@@ -60,6 +91,13 @@ plain-text document your AI can read.
 The method does not care which surface you pick. It cares that the
 file exists, that the AI reads Part I before acting, and that you add
 rows to Part II when the AI's work costs you.
+
+One caveat worth reading `THE-CASE.md` for: the surfaces above are not
+equivalent once the record has to be *defended* rather than merely
+consulted. A file inside a vendor's product is not durable,
+attributable, controlled or transferable in the sense a regulator or
+an auditor means. Start wherever is easiest; know which properties you
+are trading away while you do.
 
 ## Why one file instead of two
 
@@ -113,6 +151,10 @@ invariant.
   functions inline: Narrowing (Part I, ten worked example rules),
   Observations (Part II, register schema and one example row), Rule of
   three (Part III, the short mechanism). Copy, edit, delete as needed.
+- [`THE-CASE.md`](./THE-CASE.md) — the enterprise argument for adopting
+  it: the legislation governing AI usage, the economics of measured
+  rework, and data as a capital asset. Written for the person who has
+  to approve the method rather than the person who will run it.
 - [`LICENSE-NOTICE.md`](./LICENSE-NOTICE.md) — you own what you write.
   This repository holds the method, not your notes.
 - `docs/` — the public landing page at
