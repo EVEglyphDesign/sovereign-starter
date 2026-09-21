@@ -1,165 +1,174 @@
-# The one-file method
+# The Sovereign Starter
 
-One file. That is the whole method.
+One file. It is the harness itself — not a summary of one, not a pointer
+to one.
 
-- **[`SOVEREIGN-STARTER.md`](./SOVEREIGN-STARTER.md)** — one file with
-  three functions inside it:
-  1. **Narrowing** — what you want the AI to do or not do, in your
-     voice. The AI reads this first, before it acts for you.
-  2. **Observations** — what actually happened. Every time the AI's
-     work put something on your plate that it should not have, you log
-     one row. Individual rows can be sloppy; the aggregate is what
-     matters. **The pattern will not lie.**
-  3. **Rule of three** — the mechanism that turns observations into
-     rule changes. When three observations of the same shape stack up,
-     a rule enters Part I. If the rule closes the shape, it was right.
-     If the shape keeps repeating, the rule was under-specified.
+**[`SOVEREIGN-STARTER.md`](./SOVEREIGN-STARTER.md)** carries everything
+needed to put an AI surface under an operating contract: the contract,
+the skills that make it load, the economics that justify it, the
+register that proves it, and the mechanism that changes it.
 
-That is the whole loop. No framework to adopt. No worldview to buy.
-One file you write in your own words, and a habit of adding rows to
-the register when the AI wastes your time.
+| Part | What it is |
+|---|---|
+| **0 — Fitting** | Six capabilities, the onboarding probe, what to do when one is missing |
+| **I — Narrowing** | The contract. Thirteen worked rules, in your voice |
+| **II — Skills** | The contract in the form a machine actually picks up |
+| **III — Economics** | Why it is worth the time, for the person who has to approve it |
+| **IV — Observations** | The evidence register |
+| **V — Rule of three** | How evidence becomes rule changes |
+| **VI — Client overlays** | One core, many clients |
+| **Annex A** | Per-surface notes. Dated, and expected to go stale |
 
-The three functions are named inline so a team can read Parts I and II
-together and see, on one page, what has been agreed and why.
+Parts I, II and III are one contract with three faces: what the machine
+is told, how the telling is made to load, and why someone signs off on
+the cost. Remove one and the other two stop working.
 
-## If you have to justify this to someone else
+## The design rule that matters most
 
-The description above is the mechanism. It is not the argument you make
-to a partner, a general counsel or a finance director — they will want
-to know why a text file is worth anyone's time.
+**The core is written against capabilities. The annex is written against
+products.**
 
-**[`THE-CASE.md`](./THE-CASE.md)** is that argument, on three grounds:
+Products churn. A harness whose rules are phrased in product names dies
+with them. So every rule in Parts I–V is phrased against a *capability*
+— can this surface write to the record, can it reach the repository, can
+it see what it costs — and never against a product name. When a surface
+changes, you re-run the probe in §0.3, which asks the surface itself
+what it can do. You do not wait for someone to update a table.
 
-- **Governing legislation around usage.** The EU AI Act has been in
-  general application since 2 August 2026, and its AI literacy
-  obligations since February 2025. GDPR Article 5(2) requires
-  controllers to *demonstrate* compliance. The EU Data Act has applied
-  since September 2025. ISO/IEC 42001 certifies an AI management
-  system. Every one of them asks for the same thing: a contemporaneous,
-  attributable record of how the AI was governed and what it actually
-  did. You cannot demonstrate what you did not record.
-- **Economics.** AI bought as seats looks like a fixed cost, so nobody
-  measures the unit cost of AI-assisted work. The register measures
-  rework rather than tokens, and the rule of three is the control that
-  converts that evidence into a reduced unit cost.
-- **Data as a capital asset.** The 2025 System of National Accounts
-  recognises data as a produced asset; IAS 38 still keeps most
-  internally generated intangibles off the balance sheet. The asset is
-  real, growing and invisible. What makes data behave like capital —
-  durable, attributable, controlled, transferable — is exactly what a
-  versioned record with provenance produces, and exactly what a chat
-  history in a vendor's product does not.
+The six capabilities:
 
-Read it before you take the method into a room where someone has to
-approve it.
+| | Capability | The question it answers |
+|---|---|---|
+| **C1** | Instruction persistence | Does the contract load itself every session, or must someone attach it? |
+| **C2** | Record write | Can the AI append to the register without you pasting? |
+| **C3** | Authoritative reach | Can it query the record of truth rather than its own context? |
+| **C4** | External fetch | Can it fetch a URL or search in-session? |
+| **C5** | Spend visibility | Can it read what it is costing, in the units you are billed in? |
+| **C6** | Artifact read-back | Can it open what it just built and inspect it? |
+
+Model quality, context length and speed are deliberately not on that
+list. They change constantly and change nothing about how the harness is
+fitted.
 
 ## Five-minute start
 
-1. Download or copy the file into whatever surface you already use
-   with your AI. Options in the next section.
-2. Read Part I (Narrowing). Delete rules that do not apply to you.
-   Rewrite the ones that do into your own words. The ten rules in the
-   file are worked examples, not a fixed set.
-3. Read Part II (Observations). Delete the example row.
-4. Point your AI at the file. "Read `SOVEREIGN-STARTER.md` before you
-   answer, and log any miss into its Part II register" is enough of an
-   instruction.
-5. Start using the AI normally. When it wastes your time, add one row.
-   That is the loop.
+1. **Copy the file** into whatever surface you use with your AI.
+2. **Run the probe** in §0.3 — six questions, one turn. "Not sure"
+   counts as No until demonstrated. Then verify C2 and C3 rather than
+   trusting the answers: ask for a test row to be written and read back,
+   and ask for a named fact from the record.
+3. **Fill a capability card** (§0.2) and apply the degradation rules in
+   §0.4 for whatever is missing.
+4. **Make it yours** (§0.6). Replace the document ID. Delete the Part I
+   rules that do not describe your practice and rewrite the rest in your
+   own words — rules you did not write will not survive contact with
+   your own work. Delete the example register row, keep the schema.
+5. **Point the AI at it.** "Read `SOVEREIGN-STARTER.md` before you act,
+   acknowledge with the §0.8 signature, and log misses after my request
+   is satisfied, never instead of it."
+6. **Verify the load.** Ask for the signature. It carries the Part I
+   rule count, the top register ID and the live capability list — things
+   only a reader can produce. "Contract read and acknowledged" is a line
+   any model emits whether or not the file arrived.
+
+## Logging depends on C2, and this is where harnesses die
+
+The single most common way this method fails quietly: the operator waits
+for register rows that never come, and concludes the method did not
+work.
+
+On a **C2-capable** surface the AI appends rows itself. On a
+**C2-absent** surface it cannot, and the instruction is different:
+
+> When you miss, state the row in the register's table format at the end
+> of your return. I will paste it in.
+
+Then paste it. If you will not paste, do not pretend that surface
+carries the register — name the surface that does. §0.4 has the honest
+degradation for each of the six.
 
 ## Where to keep the file
 
-The file is plain Markdown. It works anywhere you can keep one
-plain-text document your AI can read.
+Anywhere you can keep one plain-text document your AI can read: a
+project's attached files, a notes page, a document, a folder on your
+machine, or a repository.
 
-- **Claude project knowledge** — attach the file to a project.
-  Reference it in the system prompt or the first turn.
-- **ChatGPT project files** — upload the file to a project. Reference
-  it in your first message.
-- **Perplexity project files** — attach the file to a project. Point
-  the project instructions at it.
-- **A Notion page** — paste the file into a page. Copy the page URL
-  into the AI's context.
-- **A Google Doc** — one document. Copy the doc URL into the AI's
-  context.
-- **A folder on your computer** — `~/ai-notes/SOVEREIGN-STARTER.md`.
-  Point the AI at the file.
-- **A GitHub repository** — this repository is the reference layout,
-  but you do not need a repository to use the method. A repository is
-  useful when you have graduated past what a scratchpad can hold.
+They are not equivalent, and the difference is not convenience. A
+repository with a write-scoped connector gives you C1, C2 and C3 in one
+move — the contract loads itself, the register closes its own loop, and
+the AI can reach the record of truth. A file attached to a vendor
+project gives you none of the three and leaves the record inside someone
+else's product.
 
-The method does not care which surface you pick. It cares that the
-file exists, that the AI reads Part I before acting, and that you add
-rows to Part II when the AI's work costs you.
+Start wherever is easiest. Know which capabilities you are trading away,
+and record them on the card. Part III §3 is the longer argument for why
+custody is worth the setup.
 
-One caveat worth reading `THE-CASE.md` for: the surfaces above are not
-equivalent once the record has to be *defended* rather than merely
-consulted. A file inside a vendor's product is not durable,
-attributable, controlled or transferable in the sense a regulator or
-an auditor means. Start wherever is easiest; know which properties you
-are trading away while you do.
+## If you have to justify this to someone
 
-## Why one file instead of two
+Part III is the working version of that argument, and
+**[`THE-CASE.md`](./THE-CASE.md)** is the long form with sources — for
+partners, programme directors, general counsel and finance:
 
-An earlier version of this starter shipped as two files
-(`NARROWING.md` for the rules and `OBSERVATIONS.md` for the register).
-Two files made the split between rules and evidence tidy on paper.
-Uploaded into an AI surface — a Claude project, a ChatGPT project, a
-Notion page — the split cost more than it paid: the AI had to be told
-about both files, in the right order, on every session.
+- **Usage is a regulated activity.** The EU AI Act has been in general
+  application since 2 August 2026 and its AI literacy obligations since
+  2 February 2025. GDPR Article 5(2) requires controllers to
+  *demonstrate* compliance. The EU Data Act has applied since
+  12 September 2025. ISO/IEC 42001 certifies an AI management system.
+  Every one asks for the same artefact: a contemporaneous, attributable
+  record of how the AI was governed and what it did. You cannot
+  demonstrate what you did not record.
+- **Unit cost, not seat cost.** Seats look fixed, so nobody measures what
+  an AI-assisted deliverable costs. The register measures rework, and
+  the rule of three is the control that reduces it. Note the honest
+  limit stated in Part III §2: a miss-only register shows *composition*,
+  not *rate*, unless you keep the denominator line — and it is
+  selection-biased by construction, so it is a rework register, never a
+  quality metric.
+- **Data as a capital asset.** The 2025 System of National Accounts
+  recognises data as a produced asset; IAS 38 still keeps most
+  internally generated intangibles off the balance sheet. The asset is
+  real, growing and invisible. Durable, attributable, controlled,
+  transferable is what makes data behave like capital, and a versioned
+  record with provenance has all four where a chat history has none.
 
-One file with three named parts keeps the split legible to a reader
-without the coordination overhead. Part I stays short and scannable.
-Part II grows freely as evidence accumulates. Part III is the short
-mechanism that connects them. All three arrive together in one
-attachment.
+Read it before taking the method into a room where someone has to
+approve it.
 
-If the file ever grows past what one attachment can hold, the natural
-next step is to move Part II into its own file or a repository and
-leave a pointer at the bottom of Part I. The shape survives either
-way.
+## Across more than one client
 
-## Why letters for classes and not names
+Part VI is the boundary. The core — Parts I, II, III, V and the class
+taxonomy — is shared and never forks per client. Per client you keep an
+overlay: their canon values, their systems of record, their operator
+policy and its tier-1 constraints, their capability cards, their
+register.
 
-Letters are cheap to add. A letter never has to be renamed because it
-was a poor description; a name does. The Part II register starts with
-ten classes (C, R, D, L, E, S, I, P, T, H) — you will add your own
-when a new shape appears. The letters do not have to match anyone
-else's letters. They only have to be stable for your register.
+**Registers never merge.** What crosses from an engagement back into
+your core is the rule, never the rows. Rows carry client facts; rules do
+not.
 
-## Graduating past one file
+## Why letters for the classes
 
-When the one-file scratchpad stops holding what you need:
-
-- **Add a script that reads Part II** and prints the distribution by
-  class and fault. That is the first automation worth building; it
-  turns "the pattern will not lie" from an assertion into a line of
-  output.
-- **Add a dashboard** that shows the register over time.
-- **Add categories, tags, or a database** if you have outgrown a
-  Markdown table.
-- **Split Part II back into its own file or a repository** that carries
-  the register, the read script, and a dashboard. Keep Part I as the
-  first read; nothing about the split changes what the AI sees first.
-
-At every stage, the AI reads one short first read. That is the
-invariant.
+Letters are cheap to add and never need renaming for having described
+something poorly. The harder rule is in Part IV: **do not silently
+reassign a letter.** A reassigned letter is worse than a deleted one —
+old rows stay readable and now mean the wrong thing. Add freely,
+reassign none. Across clients the letters are the only thing that makes
+two registers comparable.
 
 ## What is in this repository
 
-- [`SOVEREIGN-STARTER.md`](./SOVEREIGN-STARTER.md) — the file. Three
-  functions inline: Narrowing (Part I, ten worked example rules),
-  Observations (Part II, register schema and one example row), Rule of
-  three (Part III, the short mechanism). Copy, edit, delete as needed.
-- [`THE-CASE.md`](./THE-CASE.md) — the enterprise argument for adopting
-  it: the legislation governing AI usage, the economics of measured
-  rework, and data as a capital asset. Written for the person who has
-  to approve the method rather than the person who will run it.
-- [`LICENSE-NOTICE.md`](./LICENSE-NOTICE.md) — you own what you write.
-  This repository holds the method, not your notes.
+- [`SOVEREIGN-STARTER.md`](./SOVEREIGN-STARTER.md) — the harness. Parts
+  0–VI and Annex A. Copy, edit, delete as needed.
+- [`THE-CASE.md`](./THE-CASE.md) — the long-form argument with sources
+  and dates, for the person who has to approve the method rather than
+  the person who will run it.
+- [`LICENSE-NOTICE.md`](./LICENSE-NOTICE.md) — MIT. You own what you
+  write; this repository holds the method, not your notes.
 - `docs/` — the public landing page at
-  [eveglyphdesign.github.io/sovereign-starter](https://eveglyphdesign.github.io/sovereign-starter/).
-- `_archive-v1/` — the earliest shape of this starter, kept so old
-  links resolve. Ignore unless you were pointed at it.
+  [eveglyphdesign.github.io/sovereign-starter](https://eveglyphdesign.github.io/sovereign-starter/),
+  carrying a mirrored copy of the harness.
+- `_archive-v1/` — the earliest shape, kept so old links resolve. Ignore
+  unless you were pointed at it.
 
 That is the entire kit.
