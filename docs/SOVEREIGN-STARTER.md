@@ -1,14 +1,14 @@
 # Sovereign Starter — a universal harness, in one file
 
-**Document ID** `<YOUR-ID>-STARTER` · **Version** `3.0` · **Effective**
-2026-09-19 · **License** MIT · **Core review** annual ·
+**Document ID** `<YOUR-ID>-STARTER` · **Version** `3.1` · **Effective**
+2026-09-27 · **License** MIT · **Core review** annual ·
 **Annex A review** quarterly.
 
 This file is the harness. Not a summary of one, not a pointer to one.
 Everything needed to put any AI surface under an operating contract is
 below: the contract, the skills that make it load, the economics that
-justify it, the register that proves it, and the mechanism that changes
-it.
+justify it, the register that proves it, the mechanism that changes
+it, and the shape of the work record it helps you keep.
 
 It is designed for a practitioner working across **many clients on many
 surfaces**, where the surfaces change faster than any document about
@@ -41,6 +41,7 @@ table.
 | **IV — Observations** | The evidence register | Never |
 | **V — Rule of three** | Evidence → rule changes | Never |
 | **VI — Client overlays** | One core, many clients | Low |
+| **VII — Work record** | Evidence → decision → handoff, traceable | Low |
 | **Annex A** | Per-surface setup notes | **High. Expected to rot** |
 
 Parts I, II and III are one contract with three faces. Part I is what
@@ -225,6 +226,8 @@ it, expect class **C** on every artifact.
 - **Part IV** — delete the example row, keep the schema.
 - **Part VI** — decide your client-overlay boundary before the second
   client, not after.
+- **Part VII** — rename the ID prefixes if your practice already has
+  them. Keep the three layers.
 - **Copyright line** at the foot.
 
 ## 0.7 Priority order in a conflict
@@ -246,7 +249,7 @@ Part V creates no rules; it is how Part I changes.
 
 Once, at the start of the session, then nothing further:
 
-> `<YOUR-ID>-STARTER` v3.0 read. **N** rules in Part I; top register row
+> `<YOUR-ID>-STARTER` v3.1 read. **N** rules in Part I; top register row
 > `<ID>`; capabilities present: **C1 C3 C4 C6** *(example)*. Operating
 > on the cheapest rung that answers.
 
@@ -932,6 +935,109 @@ next engagement costs less than the last.
 Part I (§0.7). Record it on the capability card. A harness carried from
 one client to another without re-checking that tier is how you breach a
 policy you never read.
+
+---
+
+# Part VII · The work record — evidence, decision, handoff
+
+Parts I–VI narrow the machine. This part shapes what the machine helps
+you produce. A harness that governs the AI but leaves the work itself as
+loose prose has only moved the mess downstream: the build inherits
+documents it cannot trace, and when something breaks nobody can say
+which decision, or which source, it came from.
+
+**The test.** Pick any line of the build — a screen, a configuration, an
+interface, a test — and walk it back to the client source that justified
+it. If that takes more than a minute, the record is not finished.
+
+This part adds no rule to Part I. It is a record shape. It enters Part I
+only through Part V, when the register shows three observations of work
+that could not be walked back.
+
+## VII.1 Three layers, three records each
+
+| Layer | Record | ID | Answers |
+|---|---|---|---|
+| **Evidence** | Source | `SRC-` | Where did this come from, and who said it? |
+| | Need | `NEED-` | What is the client trying to achieve? |
+| | Requirement | `REQ-` | What must be true, stated so it can be tested? |
+| **Decision** | Decision | `DEC-` | What was chosen, by whom, and why? |
+| | Assumption | `ASM-` | What is treated as true until someone proves it? |
+| | Question | `Q-` | What is still open, and what does it block? |
+| **Handoff** | Blueprint section | `BLU-` | Where does the design show it? |
+| | Build item | `HND-` | What does the builder receive? |
+| | Acceptance | `ACC-` | How is done proven, and who signs? |
+
+In three sentences. **Evidence** is what the client gave us, kept with
+its source. **Decision** is what was chosen from it, with who chose and
+why. **Handoff** is what the build receives and how it is proven done.
+
+## VII.2 Five fields, upward links, three states
+
+Every record carries five fields: `id`, `statement`, `source` (the IDs it
+rests on — never blank; `consultant inference` is an honest value),
+`owner` (a named human role), `status`.
+
+Each record names its parents upward. Downward links are derived, and
+the traceability matrix is a view generated from them — never a second
+table kept by hand, which drifts on the first change.
+
+Three states: **proposed · approved · superseded**. A rejection is a
+supersession with a reason and no successor. An approved record is never
+overwritten; it is superseded and names its successor — N-09 applied to
+your own work.
+
+## VII.3 What the AI may do — three verbs
+
+1. **Extract** — pull candidate records from a named source, quoting the
+   line they came from.
+2. **Propose** — draft records in the schema, marked `proposed`, and flag
+   duplicates, contradictions, missing owners and statements that cannot
+   be tested.
+3. **Never approve** — no AI sets `approved`, invents a source ID, names a
+   decision-maker, or records test evidence it did not see. Approval is a
+   human act with a name and a date.
+
+Every AI-drafted record carries `drafted_by: AI` and a session reference,
+so the reviewer knows which rows to check first. Breach is class **C**.
+
+## VII.4 The handoff is a record, not a meeting
+
+What crosses to the build — the client's environment, the sovereign
+runtime, another team — is the approved records, the open `Q-` rows
+still blocking, and the `ACC-` rows that define done. A handoff with
+blocking questions says so on its first line; it does not travel as if
+complete. A handoff that cannot be walked back is class **F**.
+
+**Seeing what broke.** When a build item fails acceptance, the failure
+is logged against its `ACC-` row and walked back through `DEC-` to
+`SRC-`. The correction then lands on whoever holds the problem — the
+source, the decision or the build — not on whoever is closest (Part V).
+
+## VII.5 Where it lives
+
+Three files in the client's repository, one per layer:
+
+```
+registry/
+  evidence.csv    SRC · NEED · REQ
+  decisions.csv   DEC · ASM · Q
+  handoff.csv     BLU · HND · ACC
+```
+
+On a **C2**-absent surface the AI emits rows in table form and you paste
+them (§0.4). Client records never leave the client's custody boundary:
+across engagements the shape travels, the rows do not (Part VI).
+
+## VII.6 For SAP practitioners
+
+| SAP practice | Here |
+|---|---|
+| Fit-gap and workshop output | `SRC-` and `REQ-` |
+| Configuration rationale | `DEC-` |
+| Specification signed and filed | Approved `BLU-` / `HND-`, superseded, never overwritten |
+| Transport request | Commit and pull request citing the `HND-` ID |
+| UAT and cutover sign-off | Approved `ACC-`, signed by a named human |
 
 ---
 
