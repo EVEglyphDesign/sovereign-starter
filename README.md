@@ -17,6 +17,7 @@ register that proves it, and the mechanism that changes it.
 | **IV — Observations** | The evidence register |
 | **V — Rule of three** | How evidence becomes rule changes |
 | **VI — Client overlays** | One core, many clients |
+| **VII — Work record** | Evidence → decision → handoff, so any build line walks back to its source |
 | **Annex A** | Per-surface notes. Dated, and expected to go stale |
 
 Parts I, II and III are one contract with three faces: what the machine
@@ -159,7 +160,7 @@ two registers comparable.
 ## What is in this repository
 
 - [`SOVEREIGN-STARTER.md`](./SOVEREIGN-STARTER.md) — the harness. Parts
-  0–VI and Annex A. Copy, edit, delete as needed.
+  0–VII and Annex A. Copy, edit, delete as needed.
 - [`THE-CASE.md`](./THE-CASE.md) — the long-form argument with sources
   and dates, for the person who has to approve the method rather than
   the person who will run it.
